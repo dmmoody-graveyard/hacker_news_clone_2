@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="hackNewsClone">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker News Clone</title>
+  <script src="lib/angular.js"></script>
+  <script src="lib/angular-ui-router.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/ArticlesController.js"></script>
+  <script src="controllers/CommentController.js"></script>
+  <script src="controllers/CountController.js"></script>
+  <script src="services/ArticleFactory.js"></script>
+  <script src="services/CommentFactory.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div ui-view></div>
+  </div>
+</body>
+</html>

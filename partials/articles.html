@@ -1,0 +1,16 @@
+<h1>{{ article.name }}</h1>
+
+<div class="row">
+  <form ng-submit="addComment()" role="form">
+    <textarea type="text" ng-model="commentRemark" placeholder="comment here..." cols="60" rows="10"></textarea>
+    <button type="submit">Submit Comment</button>
+  </form>
+</div>
+
+<div class="row" ng-show="article.comments.length">
+  <ul>
+    <li ng-repeat="item in article.comments">{{item.remark}}</li>
+  </ul>
+</div>
+
+<a href="/">Go Home</a>

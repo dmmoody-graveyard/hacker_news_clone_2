@@ -1,0 +1,21 @@
+<div class="row" ng-controller="ArticlesCtrl">
+  <h1>News Articles</h1>
+  <div>
+    <ul>
+      <li ng-repeat="item in articles">
+        <a href="{{item.link}}" target="_blank"> {{ item.name }} </a> <span class="link">{{ item.link }}</span>
+        | <a ui-sref="articles({ articlesId: item.id})">comments</a> | <button class="btn btn-xs" ng-click="addOneVote(item.id)" ng-controller="CountCtrl">{{item.count}}</button>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <h2>Add a article</h2>
+    <form ng-submit="ArticleFactory.addArticle()" role ="form">
+      <div class="form-group">
+        <input type="text" ng-model="ArticleFactory.articleName" placeholder="title of article">
+        <input type="text" ng-model="ArticleFactory.articleLink" placeholder="Link of article">
+      </div>
+      <button type="submit">create article</button>
+    </form>
+  </div>
+</div>
