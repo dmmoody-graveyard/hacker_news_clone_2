@@ -2,9 +2,11 @@
   <h1>News Articles</h1>
   <div>
     <ul>
-      <li ng-repeat="item in articles | orderBy:'-count'">
-        <a href="{{item.link}}" target="_blank"> {{ item.name }} </a> <span class="link">{{ item.link }}</span>
-        | <a ui-sref="articles({ articlesId: item.id})">comments</a> | <button class="btn btn-xs" ng-click="addOneVote(item.id)" ng-controller="CountCtrl">{{item.count}}</button>
+      <li ng-repeat="item in articles | orderBy:'-points'">
+        <a href="{{item.link}}" target="_blank"> {{ item.name }}</a> <span class="link">{{ item.link }}</span>
+        | <a ui-sref="articles({ articlesId: item.id})">comments</a>
+        | <button class="btn btn-xs" ng-click="addOneVote(item.id, articles)" ng-controller="CountCtrl">{{item.count}}</button>
+        | Points: {{ item.points }}
       </li>
     </ul>
   </div>
