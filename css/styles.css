@@ -1,0 +1,19 @@
+.link{
+  color:white;
+  font-size: .75em;
+}
+
+body {
+  background: url("https://ununsplash.imgix.net/photo-1421284621639-884f4129b61d?q=75&fm=jpg&s=9f9c4eb194b84f49e6c6aa624de61ba2") no-repeat;
+  background-size: 100%;
+}
+
+.textBackground {
+  background: lightblue;
+  opacity: 0.4;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,16 +1,17 @@
-<div class="row" ng-controller="ArticlesCtrl">
-  <h1>News Articles</h1>
+<div ng-controller="ArticlesCtrl">
+  <h1 class='page-header well'>The England News Source</h1>
   <div>
-    <ul>
-      <li ng-repeat="item in articles | orderBy:'-points'">
-        <a href="{{item.link}}" target="_blank"> {{ item.name }}</a> <span class="link">{{ item.link }}</span>
-        | <a ui-sref="articles({ articlesId: item.id})">comments</a>
-        | <button class="btn btn-xs" ng-click="addOneVote(item.id, articles)" ng-controller="CountCtrl">{{item.count}}</button>
-        | Points: {{ item.points }}
+    <ul class='list-unstyled'>
+      <li ng-repeat="item in articles | orderBy:'-points'" class='textBackground'>
+        <a href="{{item.link}}" target="_blank"> {{ item.name }}</a> <span class="link">({{ item.link }})</span>
+        | <a ui-sref="articles({ articlesId: item.id})">comments {{ item.comments.length }}</a>
+        | <button class="btn btn-xs btn-info" ng-click="addOneVote(item.id, articles)" ng-controller="CountCtrl">
+          <span class="glyphicon glyphicon-arrow-up">{{item.count}}</span>
+          </button>
       </li>
     </ul>
   </div>
-  <div class="row">
+  <div class="section">
     <h2>Add a article</h2>
     <form ng-submit="ArticleFactory.addArticle()" role ="form">
       <div class="form-group">
